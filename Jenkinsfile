@@ -11,11 +11,6 @@ pipeline {
                 bat 'mvn clean install'
             }
         }
-        stage('Test') {
-            steps {
-                bat 'mvn test'
-            }
-        }
         stage('Publish Test Results') {
             steps {
                 junit '**/target/surefire-reports/*.xml'
