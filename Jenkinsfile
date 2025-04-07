@@ -21,7 +21,7 @@ pipeline {
                 junit '**/target/surefire-reports/*.xml'
             }
         }
-        stage('Build Docker Image') {
+        stage('Build Docker image') {
             steps {
                 bat 'docker build -t application_reservation .'
             }
