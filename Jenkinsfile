@@ -6,11 +6,11 @@ pipeline {
                 git url: 'https://github.com/errachidy10/Application-salle-de-sport-main1.git'
             }
         }
-        stage('Build') {
-            steps {
-                bat 'mvn clean install'
-            }
-        }
+         stage('Test') {
+             steps {
+                 bat 'mvn test'
+             }
+         }
         stage('Publish Test Results') {
             steps {
                 junit '**/target/surefire-reports/*.xml'
